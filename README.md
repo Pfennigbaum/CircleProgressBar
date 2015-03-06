@@ -6,7 +6,6 @@ Customizable:
 Text
 - Size
 - Color
-- Font
 
 Inner Circle
 - Width
