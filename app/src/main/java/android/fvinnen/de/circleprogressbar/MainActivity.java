@@ -1,7 +1,8 @@
 package android.fvinnen.de.circleprogressbar;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -12,6 +13,27 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        final CircleProgressBar circleProgressBar = (CircleProgressBar) findViewById(R.id.circleProgress);
+        circleProgressBar.setMax(10000);
+        circleProgressBar.setProgress(100);
+        CountDownTimer timer = new CountDownTimer(10000, 100) {
+
+
+            @Override
+            public void onTick(long millisUntilFinished) {
+                circleProgressBar.setProgressWithAnimation(millisUntilFinished, 100);
+                circleProgressBar.setText("" + (1 + Math.round(millisUntilFinished / 1000)));
+            }
+
+            @Override
+            public void onFinish() {
+                circleProgressBar.setProgressWithAnimation(0, 100);
+                circleProgressBar.setText("0");
+            }
+        };
+
+        timer.start();
     }
 
 

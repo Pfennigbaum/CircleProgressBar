@@ -1,0 +1,26 @@
+<resources>
+    <attr name="direction" format="enum">
+        <enum name="left" value="-1" />
+        <enum name="right" value="1" />
+    </attr>
+
+    <declare-styleable name="CircleProgressBar">
+        <attr name="min" format="integer" />
+        <attr name="max" format="integer" />
+        <attr name="progress" format="integer" />
+        <attr name="progressBarColor" format="color|reference" />
+        <attr name="progressBarAlpha" format="float|reference" />
+        <attr name="progressBarThickness" format="dimension|reference" />
+        <attr name="progressBarBackgroundColor" format="color|reference" />
+        <attr name="progressBarBackgroundAlpha" format="float|reference" />
+        <attr name="progressBarBackgroundThickness" format="dimension|reference" />
+        <attr name="text" format="string|reference" />
+        <attr name="direction" />
+        <attr name="startAngle" format="integer" />
+        <attr name="textColor" format="color|reference" />
+        <attr name="textSize" format="dimension|reference" />
+
+    </declare-styleable>
+
+
+</resources>
